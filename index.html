@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 TTSA 新庄・山形冬遊｜12/17–12/20</title>
+<meta name="description" content="TTSA 東京台灣留學生會 × 山形縣新庄市，2026年12月17日至20日 3泊4日行程。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#3b84c4;
+  --yellow:#f9d96a;
+  --black:#000;
+  --dark:#1f2b38;
+  --white:#fff;
+  --gap:6.2vw;
+  --line:3px solid var(--black);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans TC","Hiragino Kaku Gothic ProN",sans-serif;
+  color:var(--black);background:var(--blue);
+  line-height:1.8;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+a{color:inherit}
+
+/* ===== 固定背景：圖片連結請填在下面 url("") 裡 ===== */
+.bg{
+  position:fixed;inset:0;z-index:-1;
+  background-color:var(--blue);
+  background-image:url("");          /* ← 例：url("images/bg.jpg") */
+  background-size:cover;
+  background-position:center bottom; /* 想調整構圖可改這裡 */
+  background-repeat:no-repeat;
+}
+
+/* ===== 頁首 ===== */
+.head{
+  position:fixed;z-index:20;
+  top:calc(env(safe-area-inset-top,0px) + 14px);
+  left:var(--gap);right:var(--gap);
+  background:var(--white);border:var(--line);
+}
+.head-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.logo{font-family:Poppins,"Noto Sans TC",sans-serif;font-weight:700;font-size:clamp(18px,5.4vw,26px);letter-spacing:.02em;text-decoration:none;line-height:1.2}
+.logo span{font-weight:500;font-size:.62em;margin-left:.5em}
+.burger{width:34px;height:26px;background:none;border:0;cursor:pointer;position:relative}
+.burger i{position:absolute;left:0;right:0;height:4px;background:var(--black);transition:.2s}
+.burger i:nth-child(1){top:2px}.burger i:nth-child(2){top:11px}.burger i:nth-child(3){top:20px}
+.head.open .burger i:nth-child(1){top:11px;transform:rotate(45deg)}
+.head.open .burger i:nth-child(2){opacity:0}
+.head.open .burger i:nth-child(3){top:11px;transform:rotate(-45deg)}
+.nav{display:none;border-top:var(--line)}
+.head.open .nav{display:block}
+.nav a{display:block;padding:12px 18px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--black)}
+.nav a:last-child{border-bottom:0;background:var(--yellow)}
+
+/* ===== 版面 ===== */
+.hero{height:62svh;min-height:380px}
+.wrap{margin:0 var(--gap)}
+.panel{background:var(--yellow)}
+.block{padding:44px 6vw 40px;border-top:var(--line)}
+.block:first-child{border-top:0}
+.eyebrow{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(34px,10vw,56px);line-height:1.1;letter-spacing:.01em}
+.sub{font-weight:700;margin:6px 0 22px}
+h1.eyebrow{font-size:clamp(40px,12vw,68px)}
+.lead{font-size:17px;font-weight:500}
+.facts{margin-top:22px;border-top:var(--line)}
+.facts div{display:grid;grid-template-columns:5.5em 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--black)}
+.facts dt{font-weight:900}
+.facts dd{font-weight:500}
+
+/* 每日行程 */
+.date{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.date b{font-family:Poppins,sans-serif;font-size:clamp(34px,10vw,52px);line-height:1}
+.date em{font-style:normal;font-weight:900;font-size:18px}
+.dayno{display:inline-block;background:var(--black);color:var(--yellow);font-family:Poppins,sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;padding:2px 10px;margin-bottom:10px}
+.theme{font-size:clamp(20px,5.6vw,26px);font-weight:900;margin:12px 0 4px}
+.meals{font-size:14px;margin-bottom:14px}
+.meals span{margin-right:12px;white-space:nowrap}
+.tl{border-top:var(--line);list-style:none}
+.tl li{display:grid;grid-template-columns:4.6em 1fr;gap:10px;padding:11px 0;border-bottom:1px solid var(--black)}
+.tl time{font-family:Poppins,sans-serif;font-weight:700}
+.tl small{display:block;font-size:13.5px;font-weight:400;line-height:1.6;margin-top:2px}
+.memo{margin-top:14px;font-size:14px;padding:10px 14px;border:var(--line);background:var(--white)}
+
+/* 注意事項 */
+.notes{list-style:none;border-top:var(--line)}
+.notes li{padding:12px 0;border-bottom:1px solid var(--black)}
+.notes b{display:block}
+.contact{margin-top:20px;font-size:14px}
+
+/* 報名 */
+.join{background:var(--black);color:var(--white);padding:44px 6vw 48px}
+.join .eyebrow{color:var(--yellow)}
+.join p{margin:10px 0 26px}
+.btn{display:block;text-align:center;background:var(--yellow);color:var(--black);font-weight:900;font-size:18px;text-decoration:none;padding:16px;border:3px solid var(--yellow)}
+.btn:hover{background:var(--black);color:var(--yellow)}
+
+/* ===== 底部 ===== */
+.spacer{height:calc(130px + env(safe-area-inset-bottom,0px))}
+.banner{
+  position:fixed;z-index:15;left:0;right:0;
+  bottom:calc(env(safe-area-inset-bottom,0px) + 46px);
+  background:var(--dark);color:var(--white);
+  padding:14px var(--gap);font-size:15px;text-decoration:none;
+  display:flex;justify-content:space-between;gap:12px;
+}
+.banner span:last-child{color:var(--yellow);font-weight:700;white-space:nowrap}
+.ticker{
+  position:fixed;z-index:16;left:0;right:0;bottom:0;
+  padding:10px var(--gap) calc(env(safe-area-inset-bottom,0px) + 10px);
+  background:var(--blue);color:var(--white);
+  font-weight:700;font-size:14px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;
+}
+.ticker b{font-family:Poppins,sans-serif;color:var(--yellow);font-size:17px}
+.copy{text-align:center;color:var(--white);font-size:12px;padding:18px 0 0}
+
+@media (min-width:760px){
+  :root{--gap:max(6.2vw,calc((100vw - 760px)/2))}
+  .hero{height:70svh}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="head" id="head">
+  <div class="head-bar">
+    <a class="logo" href="#top">SHINJO・YAMAGATA<span>2026 TTSA 新庄・山形冬遊｜12/17–12/20</span></a>
+    <button class="burger" id="burger" aria-label="選單" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+  <nav class="nav">
+    <a href="#about">ABOUT　活動概要</a>
+    <a href="#features">SCHEDULE　行程</a>
+    <a href="#notes">NOTES　注意事項</a>
+    <a href="#join">ENTRY　報名</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero"></div>
+
+  <div class="wrap">
+    <div class="panel">
+
+      <section class="block" id="about">
+        <h1 class="eyebrow">ABOUT</h1>
+        <p class="sub">2026 TTSA 新庄・山形冬遊</p>
+        <p class="lead">いよいよ！今年TTSA與山形縣新庄市再一次合作舉辦地域交流與會遊活動！！！走訪東北雪國山形縣各處景點，銀山溫泉、藏王樹冰、最上川遊船等等等，還能與新庄在地居民（有老有少，老少咸宜）深度交流，一探雪國生活的日常！</p>
+        <dl class="facts">
+          <div><dt>日期</dt><dd>2026年12月17日（四）– 12月20日（日）</dd></div>
+          <div><dt>人數</dt><dd>18人</dd></div>
+          <div><dt>費用</dt><dd>（含四日內交通、旅宿費用，部分散策行程餐食費用需自理。不含來回新幹線車票。）</dd></div>
+          <div><dt>備註</dt><dd>目前仍有部分行程仍在規劃中，在本頁面報名後請關注郵件。日後將連同完整行程資料，繳費方式寄送給本頁面報名者。待繳費完成後才完成正式報名。</dd></div>
+        </dl>
+      </section>
+
+            <section class="block" id="features">
+        <h2 class="eyebrow">SCHEDULE</h2>
+        <p class="sub"></p>
+      </section>
+
+      <section class="block">
+        <span class="dayno">01</span>
+        <p class="theme">銀山溫泉</p>
+        <p class="lead">走進《神隱少女》的夢幻場景！大正浪漫氣息滿溢的銀山溫泉，在層層白雪覆蓋下更顯得神秘又迷人。漫步在沿著河畔、古色古香的木造溫泉街上，呼吸著冷冽卻清新的空氣，與從腳邊飄起的溫泉氤氳......</p>
+      </section>
+
+      <section class="block">
+        <span class="dayno">02</span>
+        <p class="theme">雪國生活體驗</p>
+        <p class="lead">來到豪雪地帶的山形一探雪國生活的真實面貌！一片白茫的世界裡如何生活？（冨樫義博新庄出身，這裡是孕育出獵人的雪國^ ^）</p>
+      </section>
+
+      <section class="block">
+        <span class="dayno">03</span>
+        <p class="theme">藏王樹冰</p>
+        <p class="lead">搭乘纜車直達山頂，被一整片壯觀無比的樹冰景觀包圍！（若天氣與行程時間允許，也有可能在藏王安排滑雪行程）</p>
+      </section>
+
+      <section class="block">
+        <span class="dayno">04</span>
+        <p class="theme">地元交流</p>
+        <p class="lead">不管是充滿智慧又親切的おばあちゃん、おじいちゃん們，還是留在家鄉的在地青年，透過最真實的互動跨越語言隔閡，親身感受東北人滿滿的人情味！！！</p>
+      </section>
+      <section class="block" id="notes">
+        <h2 class="eyebrow">NOTES</h2>
+        <p class="sub">注意事項</p>
+        <ul class="notes">
+          <li><b>旅遊保險</b>本次活動將由TTSA為參加者申辦旅遊保險。</li>
+          <li><b>聯絡方式</b>若對任何有關事項有任何疑問，歡迎聯絡TTSA官方IG與Mail: info@ttsa.jp</li>
+          <li><b>有關報名</b>目前仍有部分行程仍在規劃中，在本頁面報名後請關注郵件。日後將連同完整行程資料，繳費方式寄送給本頁面報名者。待繳費完成後才完成正式報名。</li>
+        </ul>
+        <p class="contact">聯絡<br>info@ttsa.jp<br>https://www.instagram.com/ttsa.jp/</p>
+      </section>
+
+      <section class="join" id="join">
+        <h2 class="eyebrow">ENTRY</h2>
+        <p>請填寫 Google 表單報名。</p>
+        <a class="btn" id="formLink" href="#" target="_blank" rel="noopener">前往報名表單</a>
+      </section>
+
+    </div>
+    <p class="copy">TTSA 2026</p>
+    <div class="spacer"></div>
+  </div>
+</main>
+
+<a class="banner" href="#join"><span>報名受理中</span><span>ENTRY →</span></a>
+<div class="ticker"><b>2026.12.17–20</b><span>THU–SUN</span><span>/</span><span>山形縣新庄市</span></div>
+
+<script>
+// 把這裡換成你的 Google 表單網址
+var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeZo3wG7XeuIFeraLI1VOVKyjPHwtIo6gTNQot7cAS0M0zD8g/viewform?usp=publish-editor";
+if (FORM_URL) document.getElementById("formLink").href = FORM_URL;
+
+var head = document.getElementById("head"), burger = document.getElementById("burger");
+burger.addEventListener("click", function(){
+  var o = head.classList.toggle("open");
+  burger.setAttribute("aria-expanded", o);
+});
+head.querySelectorAll(".nav a").forEach(function(a){
+  a.addEventListener("click", function(){ head.classList.remove("open"); });
+});
+</script>
+</body>
+</html>
